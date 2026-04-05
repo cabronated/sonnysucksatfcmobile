@@ -3,122 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonny Sucks at FC Mobile</title>
+    <title>Sonny's Hall of Shame</title>
     <style>
-        /* TROLL STYLING: Dark mode with aggressive red accents */
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Impact', 'Arial Black', sans-serif; /* Big, loud, meme-worthy font */
-            text-align: center;
-            margin: 0;
-            padding: 20px;
+        /* MAX DISRESPECT STYLING */
+        :root {
+            --blood-red: #cc0000;
+            --dark-bg: #0a0a0a;
+            --neon-red: #ff3333;
         }
 
-        h1 {
-            color: #ff4d4d;
-            font-size: 3.5rem;
+        body {
+            background-color: var(--dark-bg);
+            background-image: radial-gradient(circle, #1a1a1a 10%, transparent 20%), 
+                              radial-gradient(circle, #1a1a1a 10%, transparent 20%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            color: #fff;
+            font-family: 'Trebuchet MS', 'Impact', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Ticker Tape of Excuses */
+        .ticker-wrap {
+            width: 100%;
+            background-color: var(--blood-red);
+            color: white;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            text-shadow: 3px 3px #000;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
+            border-bottom: 3px solid #fff;
+        }
+        .ticker {
+            white-space: nowrap;
+            animation: ticker 15s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Glitch Title Effect */
+        .glitch-wrapper {
+            margin: 40px 0 10px 0;
+        }
+        h1 {
+            font-size: 4rem;
+            font-family: 'Impact', sans-serif;
+            color: white;
+            text-shadow: 4px 4px var(--blood-red), -4px -4px #000;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+        }
+        h1::before, h1::after {
+            content: "SONNY SUCKS AT FC MOBILE";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        h1::before {
+            color: #0ff;
+            z-index: -1;
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        h1::after {
+            color: var(--neon-red);
+            z-index: -2;
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 2px); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -2px); }
+            40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
+            80% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 2px); }
+            100% { clip-path: inset(30% 0 50% 0); transform: translate(2px, -2px); }
         }
 
         p.subtitle {
-            font-family: 'Arial', sans-serif;
-            font-size: 1.2rem;
-            color: #cccccc;
-            margin-bottom: 40px;
+            font-size: 1.5rem;
+            color: #888;
+            margin-bottom: 30px;
         }
 
-        /* Responsive Grid for the L's */
+        .stats-box {
+            background-color: #111;
+            border: 2px dashed var(--neon-red);
+            padding: 15px;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            border-radius: 8px;
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+        .stats-box span { color: var(--neon-red); font-weight: bold; font-size: 1.5rem;}
+
+        /* Gallery and Shake Animation */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         .gallery-item {
-            background-color: #1e1e1e;
+            background-color: #1a1a1a;
             padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.9);
+            position: relative;
+            transition: all 0.2s ease-in-out;
         }
 
-        /* Makes the image pop out when you hover over it */
+        /* Brutal hover shake effect */
         .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(255, 77, 77, 0.4);
+            animation: noob-shake 0.4s infinite;
+            border-color: var(--neon-red);
+            box-shadow: 0 0 25px rgba(255, 51, 51, 0.6);
+            z-index: 10;
+        }
+
+        @keyframes noob-shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
         }
 
         img {
             width: 100%;
             height: auto;
-            border-radius: 5px;
-            border: 3px solid #ff4d4d;
+            border-radius: 8px;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+        }
+
+        .roast-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: var(--blood-red);
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            transform: rotate(15deg);
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.8);
         }
 
         .caption {
-            font-family: 'Arial', sans-serif;
             margin-top: 15px;
             font-size: 1.1rem;
-            font-weight: bold;
-            color: #ff9999;
+            color: #ddd;
+            line-height: 1.4;
         }
 
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
-            font-size: 0.9rem;
-            color: #555;
-            border-top: 1px solid #333;
+        .button-container {
+            margin: 60px 0;
+        }
+
+        .donate-btn {
+            background-color: var(--blood-red);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-family: 'Impact', sans-serif;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(204, 0, 0, 0.5);
+            transition: transform 0.1s;
+        }
+
+        .donate-btn:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
 
-    <h1>Sonny Sucks at FC Mobile 🤡</h1>
-    <p class="subtitle">Welcome to the official museum of Sonny holding endless L's. Absolute noob gameplay.</p>
-
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="1.webp" alt="Sonny losing match 1">
-            <div class="caption">L #1: Didn't even stand a chance</div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="2.webp" alt="Sonny losing match 2">
-            <div class="caption">L #2: Bro was playing with his eyes closed</div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="3.webp" alt="Sonny losing match 3">
-            <div class="caption">L #3: Just uninstall the game at this point</div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="4.webp" alt="Sonny losing match 4">
-            <div class="caption">L #4: Controller disconnected? Nah, just trash</div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="5.webp" alt="Sonny losing match 5">
-            <div class="caption">L #5: A literal potato could defend better</div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="6.webp" alt="Sonny losing match 6">
-            <div class="caption">L #6: The legendary losing streak continues...</div>
+    <div class="ticker-wrap">
+        <div class="ticker">
+            ⚠️ LIVE EXCUSES FROM SONNY: "BRO MY PING WAS 999" 🤡 • "THE GAME IS SCRIPTED I SWEAR" 😭 • "MY FINGERS WERE SWEATY" 🤡 • "BRO MY CONTROLLER DIED" 😭 • "EA HATES ME" 🤡 • "YOU JUST GOT LUCKY" 😭 ⚠️
         </div>
     </div>
 
-    <footer>
-        <p>1 page visit = 1 prayer for Sonny's FC Mobile career. 🪦</p>
-    </footer>
+    <div class="glitch-wrapper">
+        <h1>SONNY SUCKS AT FC MOBILE</h1>
+    </div>
+    <p class="subtitle">A certified timeline of getting absolutely demolished.</p>
+
+    <div class="stats-box">
+        Official Sonny Player Attributes:<br>
+        ACC: <span>0</span> | AGI: <span>0</span> | FIN: <span>-99</span><br>
+        <i>Overall Rating: Card so bad it's not even in the database.</i>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="roast-badge">BIG L</div>
+            <img src="1.webp" alt="Match 1">
+            <div class="caption"><b>Scoreline from Hell.</b> His defense parted like the Red Sea. Literal training cone AI defends better.</div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="roast-badge">WASHED</div>
+            <img src="2.webp" alt="Match 2">
+            <div class="caption"><b>Zero stick skill.</b> Bro tried to spam skill moves and just ran the ball entirely out of bounds.</div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="roast-badge">0 IQ</div>
+            <img src="3.webp" alt="Match 3">
+            <div class="caption"><b>Patience of a toddler.</b> Pulled his CBs entirely out of position and left the box wide open. Easiest goals of my life.</div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="roast-badge">RAGE QUIT</div>
+            <img src="4.webp" alt="Match 4">
+            <div class="caption"><b>He's crying behind the screen.</b> The exact moment he realized the script couldn't even save him.</div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="roast-badge">NOOB</div>
+            <img src="5.webp" alt="Match 5">
+            <div class="caption"><b>Negative Finishing.</b> Had an open net, perfectly green-timed it, and still hit the post. A spectacular display of trash.</div>
+        </div>
+        
+        <div class="gallery-item">
+            <div class="roast-badge">UNINSTALL</div>
+            <img src="6.webp" alt="Match 6">
+            <div class="caption"><b>Just delete the app.</b> I am officially his owner on this game. Don't even launch it anymore, Sonny.</div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="donate-btn" onclick="alert('Transaction failed: Sonny is beyond saving.')">Click to Donate Thumbs to Sonny</button>
+    </div>
 
 </body>
 </html>
