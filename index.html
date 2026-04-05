@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonny's Hall of Shame</title>
+    <title>Sonny's FC Mobile Disaster Class</title>
     <style>
         /* MAX DISRESPECT STYLING */
         :root {
             --blood-red: #cc0000;
             --dark-bg: #0a0a0a;
-            --neon-red: #ff3333;
+            --neon-red: #ff1a1a;
+            --toxic-green: #39ff14;
         }
 
         body {
             background-color: var(--dark-bg);
-            background-image: radial-gradient(circle, #1a1a1a 10%, transparent 20%), 
-                              radial-gradient(circle, #1a1a1a 10%, transparent 20%);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
+            background-image: 
+                linear-gradient(rgba(204, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(204, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
             color: #fff;
             font-family: 'Trebuchet MS', 'Impact', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            cursor: crosshair;
         }
 
         /* Ticker Tape of Excuses */
@@ -31,15 +33,16 @@
             width: 100%;
             background-color: var(--blood-red);
             color: white;
-            padding: 8px 0;
+            padding: 10px 0;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             text-transform: uppercase;
-            border-bottom: 3px solid #fff;
+            border-bottom: 4px solid #fff;
+            box-shadow: 0 0 20px var(--blood-red);
         }
         .ticker {
             white-space: nowrap;
-            animation: ticker 15s linear infinite;
+            animation: ticker 12s linear infinite;
         }
         @keyframes ticker {
             0% { transform: translateX(100%); }
@@ -48,20 +51,21 @@
 
         /* Glitch Title Effect */
         .glitch-wrapper {
-            margin: 40px 0 10px 0;
+            margin: 50px 0 10px 0;
         }
         h1 {
-            font-size: 4rem;
+            font-size: 5rem;
             font-family: 'Impact', sans-serif;
             color: white;
-            text-shadow: 4px 4px var(--blood-red), -4px -4px #000;
+            text-shadow: 5px 5px var(--blood-red), -3px -3px #000;
             text-transform: uppercase;
             position: relative;
             display: inline-block;
             margin: 0;
+            letter-spacing: 2px;
         }
         h1::before, h1::after {
-            content: "SONNY SUCKS AT FC MOBILE";
+            content: "SONNY IS TRASH AT FC MOBILE";
             position: absolute;
             top: 0;
             left: 0;
@@ -89,182 +93,230 @@
         }
 
         p.subtitle {
-            font-size: 1.5rem;
-            color: #888;
+            font-size: 1.8rem;
+            color: #aaa;
             margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .stats-box {
             background-color: #111;
-            border: 2px dashed var(--neon-red);
-            padding: 15px;
-            width: 80%;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            border-radius: 8px;
-            color: #ccc;
-            font-size: 1.2rem;
+            border: 3px double var(--neon-red);
+            padding: 20px;
+            width: 90%;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            border-radius: 10px;
+            color: #ddd;
+            font-size: 1.3rem;
+            box-shadow: inset 0 0 20px rgba(255, 26, 26, 0.2);
+            line-height: 1.6;
         }
-        .stats-box span { color: var(--neon-red); font-weight: bold; font-size: 1.5rem;}
+        .stats-box .stat-title { color: white; font-size: 1.8rem; font-weight: bold; margin-bottom: 10px; display: block; text-transform: uppercase;}
+        .stats-box span { color: var(--neon-red); font-weight: bold; font-size: 1.6rem;}
+        .stats-box .zero { color: #555; text-decoration: line-through; }
 
         /* Gallery and Shake Animation */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         .gallery-item {
             background-color: #1a1a1a;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.9);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #333;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.9);
             position: relative;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         /* Brutal hover shake effect */
         .gallery-item:hover {
-            animation: noob-shake 0.4s infinite;
+            animation: noob-shake 0.3s infinite;
             border-color: var(--neon-red);
-            box-shadow: 0 0 25px rgba(255, 51, 51, 0.6);
+            box-shadow: 0 0 40px rgba(255, 26, 26, 0.8);
             z-index: 10;
+            transform: scale(1.05);
         }
 
         @keyframes noob-shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
+            0% { transform: translate(2px, 2px) rotate(0deg) scale(1.05); }
+            10% { transform: translate(-2px, -3px) rotate(-2deg) scale(1.05); }
+            20% { transform: translate(-4px, 0px) rotate(2deg) scale(1.05); }
+            30% { transform: translate(4px, 3px) rotate(0deg) scale(1.05); }
+            40% { transform: translate(2px, -2px) rotate(2deg) scale(1.05); }
+            50% { transform: translate(-2px, 3px) rotate(-2deg) scale(1.05); }
+            60% { transform: translate(-4px, 2px) rotate(0deg) scale(1.05); }
+            70% { transform: translate(4px, 2px) rotate(-2deg) scale(1.05); }
+            80% { transform: translate(-2px, -2px) rotate(2deg) scale(1.05); }
+            90% { transform: translate(2px, 3px) rotate(0deg) scale(1.05); }
+            100% { transform: translate(2px, -3px) rotate(-2deg) scale(1.05); }
         }
 
         img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            filter: grayscale(20%);
-            transition: filter 0.3s;
+            border-radius: 10px;
+            filter: sepia(50%) hue-rotate(-50deg) saturate(200%) contrast(120%);
+            border: 1px solid #444;
+            transition: filter 0.4s;
         }
 
         .gallery-item:hover img {
-            filter: grayscale(0%);
+            filter: grayscale(0%) contrast(110%);
         }
 
         .roast-badge {
             position: absolute;
-            top: -15px;
-            right: -15px;
+            top: -20px;
+            right: -20px;
             background-color: var(--blood-red);
             color: white;
-            font-weight: bold;
-            padding: 10px;
-            border-radius: 50%;
-            border: 3px solid #fff;
-            transform: rotate(15deg);
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            font-weight: 900;
+            font-size: 1.2rem;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 3px solid #000;
+            transform: rotate(12deg);
+            box-shadow: 5px 5px 0px rgba(0,0,0,1);
+            text-transform: uppercase;
+            z-index: 5;
         }
 
         .caption {
-            margin-top: 15px;
-            font-size: 1.1rem;
+            margin-top: 20px;
+            font-size: 1.2rem;
             color: #ddd;
-            line-height: 1.4;
+            line-height: 1.5;
+            text-align: left;
+            border-left: 4px solid var(--blood-red);
+            padding-left: 15px;
+        }
+        .caption b {
+            color: var(--toxic-green);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
         }
 
         .button-container {
-            margin: 60px 0;
+            margin: 80px 0;
+            position: relative;
+            height: 100px; 
         }
 
         .donate-btn {
             background-color: var(--blood-red);
             color: white;
-            padding: 15px 30px;
-            font-size: 1.5rem;
+            padding: 20px 40px;
+            font-size: 1.8rem;
+            font-weight: bold;
             font-family: 'Impact', sans-serif;
-            border: none;
-            border-radius: 5px;
+            border: 4px solid #fff;
+            border-radius: 10px;
             cursor: pointer;
             text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(204, 0, 0, 0.5);
-            transition: transform 0.1s;
+            box-shadow: 0 10px 25px rgba(204, 0, 0, 0.7);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.1s ease;
         }
 
-        .donate-btn:active {
-            transform: scale(0.95);
-        }
     </style>
 </head>
 <body>
 
     <div class="ticker-wrap">
         <div class="ticker">
-            ⚠️ LIVE EXCUSES FROM SONNY: "BRO MY PING WAS 999" 🤡 • "THE GAME IS SCRIPTED I SWEAR" 😭 • "MY FINGERS WERE SWEATY" 🤡 • "BRO MY CONTROLLER DIED" 😭 • "EA HATES ME" 🤡 • "YOU JUST GOT LUCKY" 😭 ⚠️
+            ⚠️ LIVE EXCUSES FROM SONNY: "BRO MY PING WAS 999" 🤡 • "MY PLAYERS FEEL SLUGGISH" 😭 • "MY SCREEN WAS SWEATY" 🤡 • "BRO MY MOM CALLED ME I SWEAR" 😭 • "EA HATES MY ACCOUNT" 🤡 • "THE GAME IS BROKEN" 😭 ⚠️
         </div>
     </div>
 
     <div class="glitch-wrapper">
-        <h1>SONNY SUCKS AT FC MOBILE</h1>
+        <h1>SONNY IS TRASH AT FC MOBILE</h1>
     </div>
-    <p class="subtitle">A certified timeline of getting absolutely demolished.</p>
+    <p class="subtitle">A scientifically proven timeline of absolute zero skill.</p>
 
     <div class="stats-box">
-        Official Sonny Player Attributes:<br>
-        ACC: <span>0</span> | AGI: <span>0</span> | FIN: <span>-99</span><br>
-        <i>Overall Rating: Card so bad it's not even in the database.</i>
+        <span class="stat-title">Official Sonny Player Attributes</span>
+        PACE: <span class="zero">0</span> (Brain Lag) | SHOOTING: <span>-99</span> (Threat to the Corner Flag)<br>
+        PASSING: <span>404</span> (Vision Not Found) | DEFENDING: <span>0</span> (Literal Turnstile)<br>
+        <br>
+        <i>Overall Rating: Bronze 12 OVR. Bro belongs in the Sunday League reserves.</i>
     </div>
 
     <div class="gallery">
         <div class="gallery-item">
-            <div class="roast-badge">BIG L</div>
+            <div class="roast-badge">WALLET WARRIOR</div>
             <img src="1.webp" alt="Match 1">
-            <div class="caption"><b>Scoreline from Hell.</b> His defense parted like the Red Sea. Literal training cone AI defends better.</div>
+            <div class="caption"><b>Spent his paycheck on points.</b> Just to get absolutely cooked by free-to-play silver squads. Proof that money cannot buy you thumbs.</div>
         </div>
         
         <div class="gallery-item">
-            <div class="roast-badge">WASHED</div>
+            <div class="roast-badge">CROSS SPAM FRAUD</div>
             <img src="2.webp" alt="Match 2">
-            <div class="caption"><b>Zero stick skill.</b> Bro tried to spam skill moves and just ran the ball entirely out of bounds.</div>
+            <div class="caption"><b>Zero Build-up Play.</b> Bro's only attacking tactic is sprinting down the wing and praying. Has never completed a pass through the middle in his entire life.</div>
         </div>
         
         <div class="gallery-item">
-            <div class="roast-badge">0 IQ</div>
+            <div class="roast-badge">AUTOPLAY DEFENDER</div>
             <img src="3.webp" alt="Match 3">
-            <div class="caption"><b>Patience of a toddler.</b> Pulled his CBs entirely out of position and left the box wide open. Easiest goals of my life.</div>
+            <div class="caption"><b>Carried by the AI.</b> He literally puts his phone down on defense because the computer plays better than he does. Still concedes 5 goals a match anyway.</div>
         </div>
         
         <div class="gallery-item">
-            <div class="roast-badge">RAGE QUIT</div>
+            <div class="roast-badge">WIFI EXCUSES</div>
             <img src="4.webp" alt="Match 4">
-            <div class="caption"><b>He's crying behind the screen.</b> The exact moment he realized the script couldn't even save him.</div>
+            <div class="caption"><b>"My ping spiked bro."</b> Blames the router every single time he loses possession. No, Sonny, your internet is fine, your reaction time is just measured in business days.</div>
         </div>
         
         <div class="gallery-item">
-            <div class="roast-badge">NOOB</div>
+            <div class="roast-badge">RAGE QUITTER</div>
             <img src="5.webp" alt="Match 5">
-            <div class="caption"><b>Negative Finishing.</b> Had an open net, perfectly green-timed it, and still hit the post. A spectacular display of trash.</div>
+            <div class="caption"><b>Mental fortitude of wet paper.</b> Swipes up and closes the app the exact millisecond he goes down 1-0. Has more "Connection Lost" errors than actual shots on target.</div>
         </div>
         
         <div class="gallery-item">
-            <div class="roast-badge">UNINSTALL</div>
+            <div class="roast-badge">DIVISION DUNCE</div>
             <img src="6.webp" alt="Match 6">
-            <div class="caption"><b>Just delete the app.</b> I am officially his owner on this game. Don't even launch it anymore, Sonny.</div>
+            <div class="caption"><b>Hard-stuck in the mud.</b> Plays 8 hours a day, watches tutorials, buys the Star Pass, and is still stuck in the bottom divisions. The matchmaking algorithm literally pities him.</div>
         </div>
     </div>
 
     <div class="button-container">
-        <button class="donate-btn" onclick="alert('Transaction failed: Sonny is beyond saving.')">Click to Donate Thumbs to Sonny</button>
+        <button class="donate-btn" id="runaway-btn">Click Here for Free FC Points</button>
     </div>
 
+    <script>
+        const btn = document.getElementById('runaway-btn');
+        const container = document.querySelector('.button-container');
+
+        btn.addEventListener('mouseover', function() {
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = btn.getBoundingClientRect();
+            
+            const maxLeft = containerRect.width - btnRect.width;
+            
+            const randomX = Math.floor(Math.random() * maxLeft);
+            const randomY = Math.floor(Math.random() * 60) - 30; 
+
+            btn.style.left = `${randomX}px`;
+            btn.style.transform = `translate(0, ${randomY}px)`;
+            btn.innerText = "TOO SLOW NOOB";
+        });
+
+        btn.addEventListener('click', function() {
+            alert('LMAO nih thought he getting shit 😭💔🙏');
+        });
+    </script>
 </body>
 </html>
